@@ -4,10 +4,14 @@
         $strsql  = "select * from edificios
                       where edfcod like '%s' and edfdsc like '%s';";
 
+                      // $strsql  = "select * from edificios
+                      //               where edfcod like '".$fltCodigo."' and edfdsc like '".$fltDsc.";";
+
         $edificios = array();
         $edificios = obtenerRegistros(sprintf($strsql
-                                                  , $fltCodigo.'%'
-                                                  , $fltDsc .'%' ));
+                                                  , valstr($fltCodigo).'%'
+                                                  , valstr($fltDsc) .'%' ));
+        // $edificios = obtenerRegistros($strsql);
         return $edificios;
     }
 
