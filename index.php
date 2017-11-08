@@ -28,6 +28,9 @@
           case "edificios":
             require_once("controllers/edificios.control.php");
             break;
+          case "edificio":
+            require_once("controllers/edificio.control.php");
+            break;
         default:
             require_once("controllers/error.control.php");
     }

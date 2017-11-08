@@ -57,10 +57,10 @@
   <tr>
     <td></td>
     <td>{{edfcod}}</td>
-    <td>{{edfdsc}}</td>
+    <td><a href="index.php?page=edificio&mode=DSP&edfcod={{edfcod}}">{{edfdsc}}</a></td>
     <td>{{edfubc}}</td>
-    <td></td>
-    <td></td>
+    <td><a href="index.php?page=edificio&mode=UPD&edfcod={{edfcod}}">editar</a></td>
+    <td><a href="index.php?page=edificio&mode=DEL&edfcod={{edfcod}}">eliminar</a></td>
   </tr>
   {{endfor edificios}}
 </table>
