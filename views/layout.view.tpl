@@ -17,13 +17,14 @@
             <div class="menu">
                 <ul>
                     <li><a href="index.php?page=home">Home</a></li>
+                    <li><a href="index.php?page=micuenta">Mi Cuenta</a></li>
                 </ul>
             </div>
             <div class="contenido">
                 {{{page_content}}}
             </div>
             <div class="footer">
-                Derechos Reservados 2016
+                Derechos Reservados 2018
             </div>
         </body>
     </html>

@@ -22,6 +22,15 @@
             //llamar al controlador
             require_once("controllers/home.control.php");
             break;
+          case "micuenta":
+            require_once("controllers/micuenta.control.php");
+              break;
+          case "cursos":
+            require_once("controllers/cursos/cursos.control.php");
+              break;
+          case "curso":
+            require_once("controllers/cursos/curso.control.php");
+              break;
         default:
             require_once("controllers/error.control.php");
     }
