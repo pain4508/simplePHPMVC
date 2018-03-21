@@ -22,6 +22,9 @@
             //llamar al controlador
             require_once("controllers/home.control.php");
             break;
+          case "signin":
+            require_once("controllers/signin.control.php");
+            break;
           case "micuenta":
             require_once("controllers/micuenta.control.php");
               break;
