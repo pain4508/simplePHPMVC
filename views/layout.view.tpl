@@ -18,6 +18,13 @@
                 <ul>
                     <li><a href="index.php?page=home">Home</a></li>
                     <li><a href="index.php?page=micuenta">Mi Cuenta</a></li>
+                    {{if userLogged}}
+                    <li>{{userEmail}}</li>
+                    <li><a href="index.php?page=logout">Cerrar</a></li>
+                    {{endif userLogged}}
+                    {{ifnot userLogged}}
+                      <li><a href="index.php?page=login">Iniciar Sesión</a></li>
+                    {{endifnot userLogged}}
                 </ul>
             </div>
             <div class="contenido">

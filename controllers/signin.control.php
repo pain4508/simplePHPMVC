@@ -5,10 +5,11 @@
 
  */
   require_once("libs/template_engine.php");
-
+  require_once("models/users.model.php");
   function run(){
     if(isset($_POST["email"])){
-      print_r($_POST);
+      $newUserId= NuevoUsuario($_POST["email"],$_POST["password"]);
+      echo $newUserId;
       die();
     }
     renderizar("sigin",array());

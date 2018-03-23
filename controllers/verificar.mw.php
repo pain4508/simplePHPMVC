@@ -10,13 +10,17 @@
           return false;
         }
     }
-    function mw_setEstaLogueado($usuario, $logueado){
+    function mw_setEstaLogueado($usuario, $correo,$id,$logueado){
         if($logueado){
             $_SESSION["userLogged"] = true;
             $_SESSION["userName"] = $usuario;
+            $_SESSION["userEmail"] = $correo;
+            $_SESSION["userId"] = $id;
         }else{
             $_SESSION["userLogged"] = false;
             $_SESSION["userName"] = "";
+            $_SESSION["userEmail"] = "";
+            $_SESSION["userId"] = "";
         }
     }
     function mw_redirectToLogin($to){

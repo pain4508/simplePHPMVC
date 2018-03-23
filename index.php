@@ -1,6 +1,8 @@
 <?php
 
     session_start();
+    //Para poner la zona horaria independiente de SO de los script en DB
+    date_default_timezone_set ('America/Tegucigalpa' );
 
     require_once("libs/utilities.php");
 
@@ -21,20 +23,44 @@
         case "home":
             //llamar al controlador
             require_once("controllers/home.control.php");
-            break;
+            die();
           case "signin":
             require_once("controllers/signin.control.php");
-            break;
-          case "micuenta":
-            require_once("controllers/micuenta.control.php");
-              break;
-          case "cursos":
-            require_once("controllers/cursos/cursos.control.php");
-              break;
-          case "curso":
-            require_once("controllers/cursos/curso.control.php");
-              break;
-        default:
-            require_once("controllers/error.control.php");
+            die();
+          case "login":
+            require_once("controllers/login.control.php");
+            die();
+          case "logout":
+            mw_setEstaLogueado("","","",false);
+            redirectToUrl('index.php');
+            die();
     }
+
+      switch($pageRequest){
+            case "micuenta":
+              if(mw_estaLogueado()) {
+                  require_once("controllers/micuenta.control.php");
+              }else{
+                  redirectToUrl('index.php?page=login');
+              }
+              die();
+            case "cursos":
+            if(mw_estaLogueado()) {
+                require_once("controllers/cursos/cursos.control.php");
+              }else{
+                  redirectToUrl('index.php?page=login');
+              }
+              die();
+              case "curso":
+              if(mw_estaLogueado()) {
+                  require_once("controllers/cursos/curso.control.php");
+                }else{
+                    redirectToUrl('index.php?page=login');
+                }
+                die();
+          }
+
+    //Si no muere antes no hay recurso
+    require_once("controllers/error.control.php");
+    die();
 ?>
