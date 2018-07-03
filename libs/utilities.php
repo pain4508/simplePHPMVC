@@ -35,6 +35,14 @@
       }
     }
 
+    function fullMergeArrayTo(&$origin, &$destiny){
+      if(is_array($origin) && is_array($destiny)){
+        foreach($origin as $okey => $ovalue){
+            $destiny[$okey] = $ovalue;
+        }
+      }
+    }
+
     function addCssRef($uri){
         global $global_context;
         if(isset($global_context["css_ref"])){

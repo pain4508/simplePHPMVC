@@ -20,9 +20,18 @@
     switch($pageRequest){
         case "home":
             //llamar al controlador
-            require_once("controllers/home.control.php");
+            require_once "controllers/home.control.php";
             break;
+         case "cuenta":
+            require_once "controllers/cuenta.control.php";
+            break;
+          case "productos":
+             require_once "controllers/productos.control.php";
+             break;
+           case "producto":
+              require_once "controllers/producto.control.php";
+              break;
         default:
-            require_once("controllers/error.control.php");
+            require_once "controllers/error.control.php";
     }
 ?>

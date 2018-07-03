@@ -38,7 +38,14 @@
    function ejecutarNonQuery($sqlstr, &$conexion = null){
         if(!$conexion) global $conexion;
         $result = $conexion->query($sqlstr);
-        return $conexion->affected_rows;
+        if($conexion->errno){
+          error_log($conexion->error);
+        }
+        if ( $result ) {
+          return $conexion->affected_rows;
+        } else{
+          return -1;
+        }
    }
 
    function valstr($str, &$conexion = null){

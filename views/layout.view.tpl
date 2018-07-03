@@ -23,7 +23,7 @@
                 {{{page_content}}}
             </div>
             <div class="footer">
-                Derechos Reservados 2016
+                Derechos Reservados 2018
             </div>
         </body>
     </html>
