@@ -17,13 +17,14 @@
             <div class="menu">
                 <ul>
                     <li><a href="index.php?page=home">Home</a></li>
+                    <li><a href="index.php?page=productos">Productos</a></li>
                 </ul>
             </div>
             <div class="contenido">
                 {{{page_content}}}
             </div>
             <div class="footer">
-                Derechos Reservados 2018
+                Derechos Reservados 2018 MiEmpresa CR
             </div>
         </body>
     </html>
