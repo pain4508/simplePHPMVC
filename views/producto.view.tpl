@@ -15,23 +15,27 @@
     <input type="hidden" name="mode" value="{{mode}}"/>
     <label for="productoCodInt">Código de Producto</label>
     <input type="text" name="productoCodInt" id="productoCodInt"
-        value="{{productoCodInt}}" placeholder="Código de Producto" maxlength="10" />
+        value="{{productoCodInt}}"
+        placeholder="Código de Producto" maxlength="10"
+        {{readonly}} />
     </div>
     <div>
       <label for="productobarra">Código de Barras</label>
       <input type="text" name="productobarra" id="productobarra"
-          value="{{productobarra}}" placeholder="Código de Barras" maxlength="13" />
+          value="{{productobarra}}" placeholder="Código de Barras" maxlength="13"
+          {{readonly}} />
       </div>
 
       <div>
         <label for="productoNombre">Nombre</label>
         <input type="text" name="productoNombre" id="productoNombre"
-            value="{{productoNombre}}" placeholder="Nombre del Producto" maxlength="128" />
+            value="{{productoNombre}}" placeholder="Nombre del Producto" maxlength="128"
+            {{readonly}}/>
         </div>
 
         <div>
           <label for="">Tipo</label>
-          <select name="productoTipo" id="productoTipo">
+          <select name="productoTipo" id="productoTipo" {{readonly}}>
               {{foreach tipoarray}}
                 <option value="{{tipocod}}" {{tiposel}}>
                   {{tipodsc}}
@@ -43,22 +47,25 @@
         <div>
           <label for="productoPrecio">Precio</label>
           <input type="text" name="productoPrecio" id="productoPrecio"
-              value="{{productoPrecio}}" placeholder="Precio del Producto" maxlength="10" />
+              value="{{productoPrecio}}" placeholder="Precio del Producto" maxlength="10"
+              {{readonly}}/>
           </div>
           <div>
           <label for="productoIva">Impuesto</label>
           <input type="text" name="productoIva" id="productoIva"
-              value="{{productoIva}}" placeholder="Porcentaje de Impuesto" maxlength="3" />
+              value="{{productoIva}}" placeholder="Porcentaje de Impuesto" maxlength="3"
+              {{readonly}} />
           </div>
 
           <div>
           <label for="productoStock">Inventario</label>
           <input type="text" name="productoStock" id="productoStock"
-              value="{{productoStock}}" placeholder="Inventario del Producto" maxlength="5" />
+              value="{{productoStock}}" placeholder="Inventario del Producto" maxlength="5"
+              {{readonly}} />
           </div>
           <div>
             <label for="productoEstado">Estado</label>
-            <select name="productoEstado" id="productoEstado">
+            <select name="productoEstado" id="productoEstado" {{readonly}}>
                 {{foreach estadoarray}}
                   <option value="{{cod}}" {{selected}}>
                     {{dsc}}
@@ -67,6 +74,8 @@
             </select>
           </div>
           <hr />
-          <button class="btn" type="submit">{{btnMode}}</button>
+          {{if showbtn}}
+            <button class="btn" type="submit">{{btnMode}}</button>
+          {{endif showbtn}}
           <a class="btn" href="index.php?page=productos">Cancelar</a>
 </form>

@@ -105,6 +105,8 @@
     if ( count($view_data["errors"]) && true) {
         $view_data["has_errors"] = true;
     }
+    $view_data["readonly"] = ($mode == "DSP" || $mode == "DEL") ? "readonly":"";
+    $view_data["showbtn"] = !($mode == "DSP") ;
     renderizar("producto", $view_data);
   }
 
