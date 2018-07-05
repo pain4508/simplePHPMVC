@@ -31,6 +31,12 @@
            case "producto":
               require_once "controllers/producto.control.php";
               break;
+           case "piedras":
+               require_once "controllers/piedras.control.php";
+               break;
+            case "piedra":
+                require_once "controllers/piedra.control.php";
+                break;
         default:
             require_once "controllers/error.control.php";
     }
