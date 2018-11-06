@@ -1,0 +1,24 @@
+productocod  bigint(18) AI
+productobarra varchar(25) NN
+productodesc  varchar(128) NN
+productodesccrt varchar(64) NN
+categoriacod  int(5) NN 
+productoest  char(3) NN WRK  [ACT INA DES RET WRK]
+productotip  char(3) NN SAL [SAL BYO JIT PRT]
+parentcod bigint(18) 
+
+
+table name productos
+
+Grabar desde RDBMs X 10 productos 
+
+Crear la ruta catalogo
+catalogo.control.php
+catalogo.view.tpl 
+productos.model.php 
+
+localhost/simplePHPMVC/index.php?page=catalogo 
+
+------------------------------------------------------------
+Codigo | Codigo Barra | Descripcion Corta | Tipo de Producto 
+------------------------------------------------------------
