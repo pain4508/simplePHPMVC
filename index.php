@@ -42,6 +42,9 @@ case "home":
 case "about":
     include_once "controllers/about.control.php";
     die();
+case "catalogo":
+    include_once "controllers/catalogo.control.php";
+    die();
 case "login":
     include_once "controllers/security/login.control.php";
     die();
