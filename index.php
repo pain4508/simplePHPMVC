@@ -45,6 +45,9 @@ case "about":
 case "catalogo":
     include_once "controllers/catalogo.control.php";
     die();
+case "catalogoform":
+    include_once "controllers/catalogoform.control.php";
+    die();
 case "login":
     include_once "controllers/security/login.control.php";
     die();
