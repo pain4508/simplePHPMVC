@@ -4,6 +4,7 @@
       method="POST" class="col-8 col-offset-2">
       <input type="hidden" name="prdcod" value="{{prdcod}}" />
       <input type="hidden" name="tocken" value="{{tocken}}" />
+      <input type="hidden" name="mode" value="{{mode}}" />
       <div class="row">
         <label class="col-5" for="prddsc">Nombre Producto</label>
         <input type="text" id="prddsc" name="prddsc" value="{{prddsc}}"
@@ -73,6 +74,12 @@
               e.stopPropagation();
               location.assign("index.php?page=productos");
           });
+          $("#btnProcesar").click(function(e){
+              e.preventDefault();
+              e.stopPropagation();
+              /*Se realize las validaciones adecuadas*/
+              document.forms[0].submit();
+          });
         });
       </script>
     <!--
@@ -88,5 +95,11 @@
     prdBio mediumtext
     -->
     </form>
-
+    {{if haserrores}}
+    <section class="col-8 col-offset-2">
+        {{foreach errores}}
+            <div>{{this}}</div>
+        {{endfor errores}}
+    </section>
+    {{endif haserrores}}
 </section>
