@@ -19,12 +19,22 @@
     {{foreach productos}}
     <tr>
       <td>{{prdcod}}</td>
-      <td>{{prddsc}}</td>
+      <td><a href="index.php?page=producto&mode=DSP&prdcod={{prdcod}}">{{prddsc}}</a></td>
       <td>{{}}</td>
       <td>{{prdPrcVVnt}}</td>
       <td>
-        <button>Editar</button>
-        <button>Eliminar</button>
+        <form action="index.php" method="GET">
+          <input name="page" value="producto" type="hidden"/>
+          <input name="mode" value="UPD" type="hidden"/>
+          <input name="prdcod" value="{{prdcod}}" type="hidden"/>
+          <button type="submit">Editar</button>
+        </form>
+        <form action="index.php" method="GET">
+          <input name="page" value="producto" type="hidden" />
+          <input name="mode" value="DEL" type="hidden" />
+          <input name="prdcod" value="{{prdcod}}" type="hidden" />
+          <button type="submit">Eliminar</button>
+        </form>
       </td>
     </tr>
     {{endfor productos}}

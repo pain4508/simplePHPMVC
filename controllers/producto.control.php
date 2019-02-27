@@ -16,6 +16,12 @@ function run()
     prdEst char(3)
     prdBio mediumtext
      */
+    $modeDescriptions = array(
+      "UPD" => "Actualizando ",
+      "DEL" => "Eliminando ",
+      "DSP" => "Detalle de "
+    );
+
     $viewData["mode"] = "";
     $viewData["modeDsc"] = "";
     $viewData["tocken"] = "";
@@ -25,6 +31,7 @@ function run()
     $viewData["isupdate"] = false;
     $viewData["isinsert"] = false;
 
+    $viewData["estados"] = obtenerEstados();
 
     $viewData["prdcod"] = "";
     $viewData["prddsc"] = "";
@@ -48,10 +55,29 @@ function run()
                 $viewData["isinsert"] = true;
                 break;
             case 'UPD':
+                if (isset($_GET["prdcod"])) {
+                    $viewData["prdcod"] =  $_GET["prdcod"];
+                } else {
+                    redirectWithMessage(
+                        "Código de Producto no Válido",
+                        "index.php?page=productos"
+                    );
+                    die();
+                }
                 break;
             case 'DEL':
                 break;
             case 'DSP':
+                $viewData["readonly"] = "readonly";
+                if (isset($_GET["prdcod"])) {
+                    $viewData["prdcod"] =  $_GET["prdcod"];
+                } else {
+                    redirectWithMessage(
+                        "Código de Producto no Válido",
+                        "index.php?page=productos"
+                    );
+                    die();
+                }
                 break;
             }
             $viewData["tocken"] = md5(time().'productos');
@@ -83,6 +109,16 @@ function run()
                      $viewData["haserrores"] = true;
                 }
                 break;
+            case 'UPD':
+                $result = actualizarProducto($_POST);
+                if ($result) {
+                    redirectWithMessage("Producto Actualizado Satisfactorimente", "index.php?page=productos");
+                    die();
+                } else {
+                     $viewData["errores"][] = "No se pudo Actualizar el producto";
+                     $viewData["haserrores"] = true;
+                }
+                break;
             }
         } else {
             $viewData["tocken"] = md5(time().'productos');
@@ -92,6 +128,32 @@ function run()
         }
     }
 
+    //Si viene el codigo del producto buscamos el producto en el modelo de datos
+    if ($viewData["prdcod"]!=='') {
+        $dbProducto = obtieneProductoPorId($viewData["prdcod"]);
+
+        mergeFullArrayTo($dbProducto, $viewData);
+
+        $viewData["estados"] = addSelectedCmbArray(
+            $viewData["estados"],
+            "cod",
+            $viewData["prdEst"],
+            "selected"
+        );
+        $viewData["modeDsc"] = $modeDescriptions[$viewData["mode"]] .
+            $viewData["prddsc"];
+/*
+        $viewData["prddsc"] = $dbProducto[""];
+        $viewData["prdcodbrr"] = $dbProducto[""];
+        $viewData["prdSKU"] = $dbProducto[""];
+        $viewData["prdStock"] = "";
+        $viewData["prdPrcVVnt"] = "";
+        $viewData["prdPrcCpm"] = "";
+        $viewData["prdImgUri"] = "";
+        $viewData["prdEst"] = "";
+        $viewData["prdBio"] = "";
+        */
+    }
     renderizar("producto", $viewData);
 }
 

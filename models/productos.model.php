@@ -48,4 +48,62 @@ VALUES ( '%s','%s', '%s', %d, %f, %f, '%s', '%s','%s');";
     }
     return false;
 }
+/**
+ * Obtiene un Producto a partir del código suminstrado
+ *
+ * @param integer $prdcod Código de Producto
+ *
+ * @return Array
+ */
+function obtieneProductoPorId($prdcod)
+{
+    $sqlstr = "Select * from productos where prdcod=%d;";
+    return obtenerUnRegistro(sprintf($sqlstr, $prdcod));
+}
+
+/**
+ * Devuelve los Estados Posibles de un Producto
+ *
+ * @return array
+ */
+function obtenerEstados()
+{
+    return Array(
+        Array("cod" => "ACT", "dsc" => "Activo"),
+        Array("cod" => "PLN", "dsc" => "En Evaluación"),
+        Array("cod" => "INA", "dsc" => "Inactivo")
+    );
+}
+
+/**
+ * Actualiza el Registro del Producto
+ *
+ * @param array $data Datos Del Formulario Debidamente Validados
+ *
+ * @return boolean
+ */
+function actualizarProducto($data)
+{
+    $updSql = "UPDATE `productos` set
+ `prddsc` = '%s', `prdcodbrr` = '%s', `prdSKU` = '%s', `prdStock` = %d,
+  `prdPrcVVnt` = %f, `prdPrcCpm` = %f, `prdImgUri` = '%s', `prdEst` = '%s',
+  `prdBio`='%s' where prdCod = %d;";
+
+    $result = ejecutarNonQuery(
+        sprintf(
+            $updSql,
+            $data["prddsc"],
+            $data["prdcodbrr"],
+            $data["prdSKU"],
+            $data["prdStock"],
+            $data["prdPrcVVnt"],
+            $data["prdPrcCpm"],
+            $data["prdImgUri"],
+            $data["prdEst"],
+            $data["prdBio"],
+            $data["prdcod"]
+        )
+    );
+    return $result;
+}
 ?>
