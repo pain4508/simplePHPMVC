@@ -2,5 +2,5 @@
 <h1>Lubricantes</h1>
 <ul>
     <li><a href = "index.php?page=proyectoFinal">Detalle</a></li>
-    <li><a href = "index.php?page=proyectoFinal">Producto</a></li>
+    <li><a href = "index.php?page=proyectoFinal">Productos</a></li>
 </ul>
