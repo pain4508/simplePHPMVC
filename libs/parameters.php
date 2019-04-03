@@ -13,9 +13,9 @@
  * @link http://url.com
  */
 $server = "127.0.0.1";
-$user = "nwuser2019";
-$pswd = "carm3l1t4s";
-$database = "nw201901smvc";
+$user = "root";
+$pswd = "root";
+$database = "Lubricantez_XYZ";
 $port = "8889";
 
 $emailHost = 'email-smtp.us-west-2.amazonaws.com';
