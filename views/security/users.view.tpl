@@ -1,5 +1,5 @@
   <h1>
-  Gestión de Usuarios
+  Gestión de Usuariosos
 </h1>
 <div class="row depth-1 m-padding">
   <form action="index.php?page=users" method="post" class="col-md-8 col-offset-2">

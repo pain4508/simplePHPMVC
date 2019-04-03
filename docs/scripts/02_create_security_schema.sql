@@ -1,4 +1,4 @@
-use demoalgorith;
+use nw201901smvc;
 CREATE TABLE `usuario` (
   `usercod` bigint(10) NOT NULL AUTO_INCREMENT,
   `useremail` varchar(80) DEFAULT NULL,

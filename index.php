@@ -96,6 +96,31 @@ case "programa":
       include_once "controllers/security/programa.control.php":
       mw_redirectToLogin($_SERVER["QUERY_STRING"]);
     die();
+case "paises":
+    ($logged)?
+      include_once "controllers/security/paises.control.php":
+      mw_redirectToLogin($_SERVER["QUERY_STRING"]);
+    die();
+case "pais":
+    ($logged)?
+      include_once "controllers/security/pais.control.php":
+      mw_redirectToLogin($_SERVER["QUERY_STRING"]);
+    die();
+case "productos":
+    ($logged)?
+      include_once "controllers/security/productos.control.php":
+      mw_redirectToLogin($_SERVER["QUERY_STRING"]);
+    die();
+case "producto":
+    ($logged)?
+      include_once "controllers/security/producto.control.php":
+      mw_redirectToLogin($_SERVER["QUERY_STRING"]);
+    die();
+    case "proyectoFinal":
+    ($logged)?
+      include_once "controllers/security/proyectoFinal.control.php":
+      mw_redirectToLogin($_SERVER["QUERY_STRING"]);
+    die();
 }
 
 addToContext("pageRequest", $pageRequest);
