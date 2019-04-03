@@ -11,6 +11,7 @@
                 <th>Stock</th>
                 <th>Usuario Creador</th>
                 <th>Fecha de Venta</th>
+                <th>Descripción</th>
                 <th>
                     <a href="index.php?page=pais&mode=INS&idpais=" class="btn depth-1 s-margin">
                     <span class="ion-plus-circled"></span>
