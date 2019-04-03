@@ -13,8 +13,8 @@
  * @link http://url.com
  */
 $server = "127.0.0.1";
-$user = "root";
-$pswd = "root";
+$user = "";
+$pswd = "";
 $database = "Lubricantes_XYZ";
 $port = "8889";
 
