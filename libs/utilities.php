@@ -413,4 +413,11 @@ function exportRealExcelFile($dataArray)
     exit;
 }
 
+///Obtener Arreglos
+
+//$arrProductos = arra();
+//$arrProductos[] = array(
+  //  "cod"=>"{{idProducto}",
+
+//);
 ?>

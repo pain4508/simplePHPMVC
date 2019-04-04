@@ -116,9 +116,19 @@ case "producto":
       include_once "controllers/security/producto.control.php":
       mw_redirectToLogin($_SERVER["QUERY_STRING"]);
     die();
-    case "proyectoFinal":
+case "proyectoFinal":
     ($logged)?
       include_once "controllers/security/proyectoFinal.control.php":
+      mw_redirectToLogin($_SERVER["QUERY_STRING"]);
+    die();
+case "compraProducto":
+    ($logged)?
+      include_once "controllers/security/compraProducto.control.php":
+      mw_redirectToLogin($_SERVER["QUERY_STRING"]);
+    die();
+case "carrito":
+    ($logged)?
+      include_once "controllers/security/carrito.control.php":
       mw_redirectToLogin($_SERVER["QUERY_STRING"]);
     die();
 }
