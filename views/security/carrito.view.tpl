@@ -15,7 +15,7 @@
             <td>{{nombreProducto}}</td>
             <td>{{descripcion}}</td>
             <td>{{precio}}</td>
-            <td><button>Eliminar</button></td>
+            <td><button>Eliminar Producto</button></td>
         </tr>
         {{endfor producto}}
     </tbody>   
