@@ -20,12 +20,7 @@ return $producto;
 
 function obtieneProductoxId($idProducto){
 
-    $sqlstr = "select p.idProducto, p.nombreProducto, p.descripcion, c.categoria, p.precio
-    from producto p 
-    inner join 
-    categoria c 
-    On p.idCategoria = c.idCategoria
-    where idProducto=%d;";
+    $sqlstr = "select * from producto where idProducto=%d;";
     return obtenerUnRegistro(sprintf($sqlstr, $idProducto));
 
 }
