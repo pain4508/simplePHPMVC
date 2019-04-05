@@ -6,7 +6,7 @@
  * Creado By PAIN
  */
 
-require_once 'models/security/productos.model.php';
+require_once 'models/security/lubricantes.model.php';
 
     function run(){
         $viewData = Array();
@@ -26,15 +26,16 @@ require_once 'models/security/productos.model.php';
         $viewData["isupdate"] = false;
         $viewData["isinsert"] = false;
 
-        $viewData["idproductos"] = "";
+        $viewData["idProducto"] = "";
         $viewData["nombreProducto"] = "";
-        $viewData["precioProducto"] = "";
-        $viewData["descripcionProducto"] = "";
+        $viewData["descripcion"] = "";
+        $viewData["idCategoria"] = "";
+        $viewData["precio"] = "";
        
         if($_SERVER["REQUEST_METHOD"] === "GET"){
             if(isset($_GET["mode"])){
                 $viewData["mode"] = $_GET["mode"];
-                $viewData["idproductos"] = $_GET["idproductos"];
+                $viewData["idProducto"] = $_GET["idProducto"];
                 switch ($viewData["mode"]){  
                     case 'INS' :
                         $viewData["modeDsc"] = "Ingresando Nuevo Producto";
@@ -46,15 +47,15 @@ require_once 'models/security/productos.model.php';
                     case 'DEL':
                     break;
                     case 'DSP':
-                        $viewData["modeDsc"] = "Detalle:";
+                        $viewData["modeDsc"] = "Detalle del Producto:";
                          $viewData["readonly"] = "readonly";
 
-                        if(isset($_GET["idproductos"])){
-                         $viewData["idproductos"] = $_GET["idproductos"];
+                        if(isset($_GET["idProducto"])){
+                         $viewData["idProducto"] = $_GET["idProducto"];
                              }else{
                                 redirectWithMessage(
                                   "Código de Producto no Valido",
-                                  "index.php?page=productos"
+                                  "index.php?page=compraProducto"
                               );
                         die();
                   }
@@ -69,7 +70,7 @@ require_once 'models/security/productos.model.php';
             if(isset($_POST["tocken"]) && $_POST["tocken"] === $_SESSION["producto_tocken"])
                 {
                 $viewData["mode"] = $_POST["mode"];
-                $viewData["idproductos"] = $_POST["idproductos"];
+                $viewData["idProducto"] = $_POST["idProducto"];
                 $viewData["tocken"] = md5(time().'productos');
                 $_SESSION["producto_tocken"] = $viewData["tocken"];
 
@@ -88,9 +89,9 @@ require_once 'models/security/productos.model.php';
             }
            
         }
-        if($viewData["idproductos"]!==''){
-            $dbProducto = obtieneProductoPorId($viewData["idproductos"]);
-            mergeFullArrayTo($dbProducto, $viewData);
+        if($viewData["idProducto"]!==''){
+            $Producto = obtieneProductoxId($viewData["idProducto"]);
+            mergeFullArrayTo($Producto, $viewData);
         }   
     
   

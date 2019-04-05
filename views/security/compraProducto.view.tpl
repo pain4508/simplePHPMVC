@@ -23,13 +23,22 @@
         {{foreach producto}}
         <tr>
             <td>{{idProducto}}</td>
-            <td><a href="index.php?page=producto&mode=DSP&idproductos={{idproductos}}">{{nombreProducto}}</td>
+            <td><a href="index.php?page=producto&mode=DSP&idProducto={{idProducto}}">{{nombreProducto}}</td>
             <td>{{descripcion}}</td>
             <td>{{idCategoria}}</td>
             <td>{{precio}}</td>
-            <td><button>Agregar al carrito de Compra</button></td>
+            <td><button id="addCarrito">Agregar al carrito de Compra</button></td>
         </tr>
         {{endfor producto}}
     </tbody>   
 </table>
+   <script>
+        $(document).ready(function(){
+            $("#addCarrito").click(function(e){
+              e.preventDefault();
+              e.stopPropagation();
+                document.forms[0].submit();
+                    });  
+        });
+    </script>
 </section>

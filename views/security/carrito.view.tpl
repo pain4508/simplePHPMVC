@@ -1,3 +1,5 @@
+
+
 <h1>CARRITO DE COMPRA</h1>
 <h2>{{nombre}}</h2>
 <section class="row" bordercolor = "black">
