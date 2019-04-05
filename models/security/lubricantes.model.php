@@ -6,11 +6,7 @@ require_once("libs/dao.php");
 
 function obtenerProductos(){
 
-$sqlstr = "select p.idProducto, p.nombreProducto, p.descripcion, c.categoria, p.precio
-            from producto p 
-            inner join 
-            categoria c 
-            On p.idCategoria = c.idCategoria;";
+$sqlstr = "select * from producto;";
 $producto = array();
 $producto = obtenerRegistros($sqlstr);
 return $producto;
