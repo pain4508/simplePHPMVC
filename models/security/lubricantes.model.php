@@ -20,5 +20,26 @@ function obtieneProductoxId($idProducto){
     return obtenerUnRegistro(sprintf($sqlstr, $idProducto));
 
 }
+//Insertar producto en factura
 
+function insertarProductoFactura($data)
+{
+    $insSql = "INSERT INTO `producto`
+        (`idProducto`, `nombreProducto`, `descripcion`, `idCategoria`, `precio`)
+    VALUES ( %d,'%f', '%f', '%d', '%d');";
+        $result = ejecutarNonQuery(
+            sprintf(
+                $insSql,
+                $data["idProducto"],
+                $data["nombreProducto"],
+                $data["descripcion"],
+                $data["idCategoria"],
+                $data["precio"]
+        )
+    );
+    if($result){
+        return getLastInserId();
+    }
+    return false;
+}
 ?>

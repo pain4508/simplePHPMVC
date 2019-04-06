@@ -15,6 +15,8 @@
             <th>
                 <a href="index.php?page=carrito" class="btn depth-1 s-margin">
                 <span class="ion-eye">Ver Carrito</span>
+                <a href="index.php?page=producto&mode=INS&idProducto=" class="btn depth-1 s-margin">
+                <span class="ion-circled">Agregar Producto</span>
                 </a>
             </th>
         </tr>
@@ -37,8 +39,8 @@
             $("#addCarrito").click(function(e){
               e.preventDefault();
               e.stopPropagation();
-                document.forms[0].submit();
-                    });  
+                
+                }); 
         });
     </script>
 </section>

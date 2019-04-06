@@ -26,12 +26,19 @@
       <div class="row">
         <label class="col-5" for="idCategoria">Categoria</label>
             <input type="text"  id="idCategoria" name="idCategoria" value="{{idCategoria}}"
-            placeholder="idCategoria" max="11"
+            placeholder="Codigo de Categoria" max="11"
+            class="col-7" {{readonly}} />
+    </div>
+       <div class="row">
+        <label class="col-5" for="precio">Precio</label>
+            <input type="text"  id="precio" name="precio" value="{{precio}}"
+            placeholder="Precio del Producto" max="11"
             class="col-7" {{readonly}} />
     </div>
       <div class="row">
             <div class="col-20 offset-7 center">
             <button id="btnCancelar">Cancelar</button>
+            <button id="btnProcesar">Confirmar</button>
             </button>
         </div>
     <script>
@@ -41,6 +48,11 @@
                 e.stopPropagation();
                 location.assign("index.php?page=compraProducto");
             });
+             $("#btnProcesar").click(function(e){
+                        e.preventDefault();
+                        e.stopPropagation();
+                        document.forms[1].submit();
+                    }); 
            
         });
     </script>

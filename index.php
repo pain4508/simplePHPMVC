@@ -131,6 +131,11 @@ case "carrito":
       include_once "controllers/security/carrito.control.php":
       mw_redirectToLogin($_SERVER["QUERY_STRING"]);
     die();
+case "factura":
+    ($logged)?
+      include_once "controllers/security/factura.control.php":
+      mw_redirectToLogin($_SERVER["QUERY_STRING"]);
+    die();
 }
 
 addToContext("pageRequest", $pageRequest);

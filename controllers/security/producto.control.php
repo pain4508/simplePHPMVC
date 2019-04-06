@@ -38,9 +38,19 @@ require_once 'models/security/lubricantes.model.php';
                 $viewData["idProducto"] = $_GET["idProducto"];
                 switch ($viewData["mode"]){  
                     case 'INS' :
-                        $viewData["modeDsc"] = "Ingresando Nuevo Producto";
-                        $viewData["isinsert"] = true;
-                        break;
+                    $viewData["modeDsc"] = "Producto Nuevo";
+                    $viewData["isinsert"] = true;
+                    ///Validar la Data
+                    ///llamamos al modelo de datos para insertar el producto
+                        $lastID = insertarProductoFactura($_POST);
+                        if($lastID){
+                            redirectWithMessage("Pais Agregado Satisfactoriamente", "index.php?page=compraProducto");
+                            die();
+                        }else{
+                            $viewData["errores"][] = "No se puedo agregar el pais";
+                            $viewData["haserrores"] = true;
+                        }
+                    break;
                     case 'UDP':
                     break;
 
