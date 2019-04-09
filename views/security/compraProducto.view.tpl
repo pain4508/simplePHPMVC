@@ -29,18 +29,10 @@
             <td>{{descripcion}}</td>
             <td>{{idCategoria}}</td>
             <td>{{precio}}</td>
-            <td><button id="addCarrito">Agregar al carrito de Compra</button></td>
+            <td><a id="addCarrito" class="btn" href="index.php?page=carrito&idProducto={{idProducto}}&mode=INS">Agregar al carrito de Compra</a></td>
+            </form>
         </tr>
         {{endfor producto}}
     </tbody>   
 </table>
-   <script>
-        $(document).ready(function(){
-            $("#addCarrito").click(function(e){
-              e.preventDefault();
-              e.stopPropagation();
-                
-                }); 
-        });
-    </script>
 </section>

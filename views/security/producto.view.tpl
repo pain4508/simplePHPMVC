@@ -51,7 +51,7 @@
              $("#btnProcesar").click(function(e){
                         e.preventDefault();
                         e.stopPropagation();
-                        document.forms[1].submit();
+                        document.forms[0].submit();
                     }); 
            
         });

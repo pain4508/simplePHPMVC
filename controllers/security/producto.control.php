@@ -40,16 +40,6 @@ require_once 'models/security/lubricantes.model.php';
                     case 'INS' :
                     $viewData["modeDsc"] = "Producto Nuevo";
                     $viewData["isinsert"] = true;
-                    ///Validar la Data
-                    ///llamamos al modelo de datos para insertar el producto
-                        $lastID = insertarProductoFactura($_POST);
-                        if($lastID){
-                            redirectWithMessage("Pais Agregado Satisfactoriamente", "index.php?page=compraProducto");
-                            die();
-                        }else{
-                            $viewData["errores"][] = "No se puedo agregar el pais";
-                            $viewData["haserrores"] = true;
-                        }
                     break;
                     case 'UDP':
                     break;
@@ -88,6 +78,16 @@ require_once 'models/security/lubricantes.model.php';
                     case 'INS':
                         $viewData["modeDsc"] = "Nuevo Producto";
                         $viewData["isinsert"] = true;
+                        ///Validar la Data
+                        ///llamamos al modelo de datos para insertar el producto
+                        $lastID = insertarProductoFactura($_POST);
+                        if($lastID){
+                            redirectWithMessage("Producto Agregado Satisfactoriamente", "index.php?page=compraProducto");
+                            die();
+                        }else{
+                            $viewData["errores"][] = "No se puedo agregar el pais";
+                            $viewData["haserrores"] = true;
+                        }
                         break;
                         
                 }

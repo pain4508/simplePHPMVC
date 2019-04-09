@@ -8,7 +8,7 @@
  * 
  * @return Array
  */
-    function obtenerProductos(){
+    function obtenerProductosT(){
 
         $sqlstr = "select * from productos;";
         $productos = array();
@@ -24,8 +24,8 @@
  */
 function obtieneProductoPorId($idproductos){
 
-    $sqlstr = "select * from productos where idproductos=%d;";
-    return obtenerUnRegistro(sprintf($sqlstr, $idpais));
+    $sqlstr = "select * from producto where idProducto=%d;";
+    return obtenerUnRegistro(sprintf($sqlstr, $idproductos));
 
 }
 

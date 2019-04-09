@@ -14,9 +14,9 @@
  */
 $server = "127.0.0.1";
 $user = "root";
-$pswd = "root";
+$pswd = "12345678";
 $database = "Lubricantes_XYZ";
-$port = "8889";
+$port = "3306";
 
 $emailHost = 'email-smtp.us-west-2.amazonaws.com';
 $smtpUser = 'amazonwebuserkey';

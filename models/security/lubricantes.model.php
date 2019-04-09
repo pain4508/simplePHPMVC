@@ -24,9 +24,7 @@ function obtieneProductoxId($idProducto){
 
 function insertarProductoFactura($data)
 {
-    $insSql = "INSERT INTO `producto`
-        (`idProducto`, `nombreProducto`, `descripcion`, `idCategoria`, `precio`)
-    VALUES ( %d,'%f', '%f', '%d', '%d');";
+    $insSql = "INSERT INTO `producto` (`idProducto`, `nombreProducto`, `descripcion`, `idCategoria`, `precio`) VALUES ( %d, '%s', '%s', %d, %f);";
         $result = ejecutarNonQuery(
             sprintf(
                 $insSql,
