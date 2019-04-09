@@ -4,7 +4,7 @@ require_once 'models/security/productos.model.php';
 
 function agregarACarrito($data)
 {
-    $INsSql = "INSERT INTO `detallecarrito`(`idcarrito`, `idProducto`) VALUES (2, %d);";
+    $insSql = "INSERT INTO `detallecarrito` (`idcarrito`, `idProducto`) VALUES (1, %d);";
         $result = ejecutarNonQuery(
             sprintf(
                 $insSql,
