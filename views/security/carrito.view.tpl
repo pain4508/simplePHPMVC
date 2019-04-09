@@ -27,18 +27,13 @@
 </table>
    <div class="row">
             <div class="col-20 offset-7 center">
-            <button id="btnConfirmar">Confirmar Pago</button>
+            <a href="index.php?page=factura" id="btnConfirmar">Confirmar Pago</a>
              &nbsp;
             <button id="btnCancelar">Cancelar</button>
             </button>
         </div>
    <script>
         $(document).ready(function(){
-            $("#btnProcesar").click(function(e){
-              e.preventDefault();
-              e.stopPropagation();
-                document.forms[0].submit();
-                    });
             $("#btnCancelar").click(function(e){
                 e.preventDefault();
                 e.stopPropagation();

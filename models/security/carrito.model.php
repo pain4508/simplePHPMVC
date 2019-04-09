@@ -20,7 +20,7 @@ function agregarACarrito($data)
 }
 function obtenerCarrito(){
 
-    $sqlstr = "select idProducto from detallecarrito WHERE idcarrito = 1;";
+    $sqlstr = "select idProducto from detallecarrito;";
     $productos = array();
     $prods = array();
     $productos = obtenerRegistros($sqlstr);
@@ -28,5 +28,10 @@ function obtenerCarrito(){
         $prods[] = obtieneProductoPorId($p['idProducto']);
     }
     return $prods;
+}
+
+function borrarCarrito(){
+    $sqlstr = "delete from carrito WHERE usercod = 4;";
+    ejecutarNonQuery($sqlstr);
 }
 ?>
