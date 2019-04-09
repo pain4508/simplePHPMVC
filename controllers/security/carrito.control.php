@@ -9,7 +9,7 @@ function run(){
         $viewData["idProducto"] = $_GET["idProducto"];
         switch ($viewData["mode"]){  
             case 'INS' :
-            $lastID = agregarACarrito($_GET);
+            agregarACarrito($_GET);
             redirectWithMessage("Producto Agregado Satisfactoriamente", "index.php?page=compraProducto");
             die();
       

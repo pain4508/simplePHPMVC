@@ -22,7 +22,7 @@ function agregarFactura($data)
 function agregarDetalleFactura($idfactura, $idproducto)
 {
     $insSql = "INSERT INTO `detallefactura`
-        (`idfactura`, `idproducto`)
+        (`idfactura`, `idProducto`)
     VALUES (%d, %d);";
         $result = ejecutarNonQuery(
             sprintf(

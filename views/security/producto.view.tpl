@@ -38,7 +38,7 @@
       <div class="row">
             <div class="col-20 offset-7 center">
             <button id="btnCancelar">Cancelar</button>
-            <button id="btnProcesar">Confirmar</button>
+            
             </button>
         </div>
     <script>
@@ -48,11 +48,7 @@
                 e.stopPropagation();
                 location.assign("index.php?page=compraProducto");
             });
-             $("#btnProcesar").click(function(e){
-                        e.preventDefault();
-                        e.stopPropagation();
-                        document.forms[0].submit();
-                    }); 
+          
            
         });
     </script>
