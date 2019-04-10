@@ -9,6 +9,7 @@ function run(){
         $viewData["idProducto"] = $_GET["idProducto"];
         switch ($viewData["mode"]){  
             case 'INS' :
+            
             agregarACarrito($_GET);
             redirectWithMessage("Producto Agregado Satisfactoriamente", "index.php?page=compraProducto");
             die();
@@ -17,6 +18,9 @@ function run(){
             case 'UDP':
             break;
             case 'DEL':
+            eliminarProductoDeCarrito($_GET["idProducto"]);
+            redirectWithMessage("Producto Eliminado Satisfactorimente", "index.php?page=carrito");
+            
             break;
             case 'VER':
             

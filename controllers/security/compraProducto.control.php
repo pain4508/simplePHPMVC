@@ -24,7 +24,7 @@ $p->id = $_POST["precio"];
 
     if(isset($_SESSION["carrito"])){
         $carrito = $_SESSION["carrito"];
-    }else{
+    }else{  
         $carrito = array();
     }
 array_push($carrito, $p);

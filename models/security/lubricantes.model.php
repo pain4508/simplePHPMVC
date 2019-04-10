@@ -12,6 +12,15 @@ $producto = obtenerRegistros($sqlstr);
 return $producto;
 }
 
+//Mostrar tipo de pago
+function obtenerTipoPago(){
+
+    $sqlstr = "select * from formapago order by formapago desc;";
+    $formapago = array();
+    $formapago = obtenerRegistros($sqlstr);
+    return $formapago;
+    }
+
 // Mostrar lista de productos por idProducto
 
 function obtieneProductoxId($idProducto){
@@ -40,4 +49,5 @@ function insertarProductoFactura($data)
     }
     return false;
 }
+
 ?>

@@ -45,11 +45,12 @@ require_once 'models/security/lubricantes.model.php';
                     break;
 
                     case 'DEL':
+                    
                     break;
                     case 'DSP':
                         $viewData["modeDsc"] = "Detalle del Producto:";
                          $viewData["readonly"] = "readonly";
-
+                        
                         if(isset($_GET["idProducto"])){
                          $viewData["idProducto"] = $_GET["idProducto"];
                              }else{

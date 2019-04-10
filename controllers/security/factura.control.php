@@ -13,6 +13,9 @@ require_once 'models/security/carrito.model.php';
       redirectWithMessage("Pago recibido", "index.php?page=compraProducto");
     }
     renderizar("security/factura",Array());
+
+
   }
   run();
+
 ?>

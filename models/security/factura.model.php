@@ -37,4 +37,5 @@ function agregarDetalleFactura($idfactura, $idproducto)
     }
     return false;
 }
+
 ?>

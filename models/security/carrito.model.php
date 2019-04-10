@@ -4,7 +4,7 @@ require_once 'models/security/productos.model.php';
 
 function agregarACarrito($data)
 {
-    $insSql = "INSERT INTO `detallecarrito` (`idcarrito`, `idProducto`) VALUES (1, %d);";
+    $insSql = "INSERT INTO `detallecarrito` (`idcarrito`, `idProducto`) VALUES (2, %d);";
         $result = ejecutarNonQuery(
             sprintf(
                 $insSql,
@@ -31,5 +31,15 @@ function obtenerCarrito(){
 function borrarCarrito(){
     $sqlstr = "delete from detallecarrito;";
     ejecutarNonQuery($sqlstr);
+}
+function eliminarProductoDeCarrito($idProducto)
+{
+    $delSql = "delete from `detallecarrito` where idProducto = %d;";
+    return ejecutarNonQuery(
+        sprintf(
+            $delSql,
+            $idProducto
+        )
+    );
 }
 ?>
