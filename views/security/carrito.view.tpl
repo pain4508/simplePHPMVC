@@ -7,7 +7,7 @@
     <input type="hidden" name="codUsuario" value="4"/>
 <h2>{{nombre}}</h2>
 <section class="row" bordercolor = "black">
-<table class="col-2 col-offset-1" >
+<table class="col-1 col-offset-1" >
     <thead>
         <tr>
             <th>Codigo del Producto</th>
@@ -30,13 +30,7 @@
         {{endfor producto}}
     </tbody>   
 </table>
-   <div class="row">
-            <div class="col-20 offset-7 center">
-            <button id="btnConfirmar">Confirmar Pago</button>
-             &nbsp;
-            <button id="btnCancelar">Cancelar</button>
-            </button>
-        </div>
+ 
    <script>
         $(document).ready(function(){
             $("#btnCancelar").click(function(e){
@@ -57,8 +51,9 @@
           
         });
     </script>
-    <div class = "col-10 offset-6 center"><br>
-    <table class= "col-10 offset-6 center">
+    <hr class = "col-9 offset-2 center">
+    <div class = "col-9 offset-2 center"><br>
+    <table class= "col-12 offset-2 center">
         <thead>
             <tr>
                 <td>***********DETALLE DE FACTURA********</td>
@@ -79,5 +74,12 @@
         </tbody>
        </div>
        </table>
+         <div class="row">
+            <div class="col-20 offset-7 center">
+            <button id="btnConfirmar">Confirmar Pago</button>
+             &nbsp;
+            <button id="btnCancelar">Cancelar</button>
+            </button>
+        </div>
     </form>
 </section>
