@@ -7,7 +7,7 @@
     <input type="hidden" name="codUsuario" value="4"/>
 <h2>{{nombre}}</h2>
 <section class="row" bordercolor = "black">
-<table class="col-10 col-offset-1" >
+<table class="col-2 col-offset-1" >
     <thead>
         <tr>
             <th>Codigo del Producto</th>
@@ -65,23 +65,18 @@
             </tr>
         </thead>
         <tbody>
-             <div>
              <tr>
-                Sub-Total:<input placeHolder = "Subtotal" value = {{subtotal}}>
-              
+                <td>Sub-Total: L. <input placeHolder = "Subtotal" value = {{subtotal}}></td>
              </tr>
              <br>
              <tr>
-                Impuesto:<input placeHolder = "Impuesto" value="{{isv}}">
+                <td>Impuesto: L. <input placeHolder = "Impuesto" value="{{isv}}"></td>
              </tr>
              <br>
              <tr>
-                Total:<input placeHolder = "Total" value="{{total}}">
-             </tr>
-            
-                </div>
+                <td>Total: L.  <input placeHolder = "Total" value="{{total}}"></td>
+             </tr> 
         </tbody>
-        
        </div>
        </table>
     </form>
