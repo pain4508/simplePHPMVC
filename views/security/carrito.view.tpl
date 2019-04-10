@@ -61,15 +61,15 @@
         </thead>
         <tbody>
              <tr>
-                <td>Sub-Total: L. <input placeHolder = "Subtotal" value = {{subtotal}}></td>
+                <td>Sub-Total: L. <input type = "text" readonly = "readonly" placeHolder = "Subtotal" value = {{subtotal}}></td>
              </tr>
              <br>
              <tr>
-                <td>Impuesto: L. <input placeHolder = "Impuesto" value="{{isv}}"></td>
+                <td>Impuesto: L. <input type = "text" readonly = "readonly" placeHolder = "Impuesto" value="{{isv}}"></td>
              </tr>
              <br>
              <tr>
-                <td>Total: L.  <input placeHolder = "Total" value="{{total}}"></td>
+                <td>Total: L.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input readonly = "readonly" placeHolder = "Total" value="{{total}}"></td>
              </tr> 
         </tbody>
        </div>
