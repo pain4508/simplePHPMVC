@@ -65,12 +65,22 @@
             </tr>
         </thead>
         <tbody>
-    
-              {{foreach producto}}
-              <tr>
-                <td>{{precio}}</td>
-             {{endfor producto}} 
-          
+             <div>
+             {{foreach producto}}
+             <tr>
+                Sub-Total:<input placeHolder = "Subtotal" value = {{precio}}>
+              {{endfor producto}}
+             </tr>
+             <br>
+             <tr>
+                Impuesto:<input placeHolder = "Impuesto">
+             </tr>
+             <br>
+             <tr>
+                Total:<input placeHolder = "Total">
+             </tr>
+            
+                </div>
         </tbody>
         
        </div>
