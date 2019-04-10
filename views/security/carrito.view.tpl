@@ -57,5 +57,15 @@
           
         });
     </script>
+    
+    <div class="col-10 col-offset-1">Detalle de Pago:       
+    {assign var= count value = {{precio}} }
+        {{foreach producto}}
+        <input placeHolder = "precio" value = {{precio}} type = "button">
+        
+        {{endfor producto}}
+       
+
+    </div>
     </form>
 </section>
