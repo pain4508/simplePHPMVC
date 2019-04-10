@@ -57,15 +57,23 @@
           
         });
     </script>
+    <div class = "col-10 offset-6 center"><br>
+    <table class= "col-10 offset-6 center">
+        <thead>
+            <tr>
+                <td>***********DETALLE DE FACTURA********</td>
+            </tr>
+        </thead>
+        <tbody>
     
-    <div class="col-10 col-offset-1">Detalle de Pago:       
-    {assign var= count value = {{precio}} }
-        {{foreach producto}}
-        <input placeHolder = "precio" value = {{precio}} type = "button">
+              {{foreach producto}}
+              <tr>
+                <td>{{precio}}</td>
+             {{endfor producto}} 
+          
+        </tbody>
         
-        {{endfor producto}}
-       
-
-    </div>
+       </div>
+       </table>
     </form>
 </section>

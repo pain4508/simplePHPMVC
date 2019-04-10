@@ -27,7 +27,7 @@ function obtenerCarrito(){
     }
     return $prods;
 }
-
+  
 function borrarCarrito(){
     $sqlstr = "delete from detallecarrito;";
     ejecutarNonQuery($sqlstr);
@@ -42,4 +42,5 @@ function eliminarProductoDeCarrito($idProducto)
         )
     );
 }
+
 ?>

@@ -32,5 +32,7 @@ $viewData["producto"] = obtenerCarrito();
 renderizar('security/carrito', $viewData);
 }
 
+
+
 run();
 ?>
