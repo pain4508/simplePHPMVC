@@ -28,7 +28,14 @@ function run(){
         }
     }   
   }
+$subtotal  =  0;
 $viewData["producto"] = obtenerCarrito();
+foreach ($viewData["producto"] as $p) {
+  $subtotal += $p["precio"]; 
+}
+$viewData["subtotal"] = $subtotal;
+$viewData["isv"]= $subtotal * 0.15;
+$viewData["total"]= $subtotal + $viewData["isv"];
 renderizar('security/carrito', $viewData);
 }
 
