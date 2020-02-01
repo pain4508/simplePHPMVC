@@ -1,6 +1,6 @@
 <div class="heropanel">
   <h1>
-    Simple PHP MVC Demo
+    Proyecto Final PHP MVC Demo
   </h1>
 
   <a href="index.php?page=admin" class="btn btn-primary">Crear Cuenta</a>
